@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="library" class="com.demo.first.firstdemo.Library">
+		<property name="book" ref="book1"></property>
+		<property name="name" value="Biblio1"></property>
+	</bean>
+
+	<bean id="book1" class="com.demo.first.firstdemo.Book">
+		<property name="name" value="My book"></property>
+		<property name="loan" ref="loan1"></property>
+		<property name="editorial" ref="editorial1"></property>
+		<property name="author" ref="author1"></property>
+	</bean>
+
+	<bean id="loan1" class="com.demo.first.firstdemo.Loan">
+		<property name="reference" value="111"></property>
+	</bean>
+
+	<bean id="author1" class="com.demo.first.firstdemo.Author">
+		<property name="name" value="John"></property>
+		<property name="surname" value="Doe"></property>
+	</bean>
+
+	<bean id="editorial1" class="com.demo.first.firstdemo.Editorial">
+		<property name="name" value="NoBooks ed"></property>
+		<property name="owner" value="Will Smith"></property>
+	</bean>
+</beans>
