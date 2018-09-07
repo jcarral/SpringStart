@@ -1,30 +1,32 @@
 package com.demo.first.firstdemo;
 
+import java.util.List;
+
 public class Library {
-	private Book book;
+	private List<Book> books;
 	private String name;
 
 	public Library() {
 	}
 
-	public Library(Book book, String name) {
+	public Library(List<Book> books, String name) {
 		super();
-		this.book = book;
+		this.books = books;
 		this.name = name;
 	}
 
 	/**
-	 * @return the book
+	 * @return the books
 	 */
-	public Book getBook() {
-		return book;
+	public List<Book> getBooks() {
+		return books;
 	}
 
 	/**
 	 * @param book the book to set
 	 */
-	public void setBook(Book book) {
-		this.book = book;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 	/**
@@ -48,7 +50,7 @@ public class Library {
 	 */
 	@Override
 	public String toString() {
-		return "Library [book=" + book + ", name=" + name + "]";
+		return "Library [book=" + books + ", name=" + name + "]";
 	}
 
 }
