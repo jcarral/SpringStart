@@ -1,7 +1,13 @@
 package com.demo.first.firstdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Editorial {
+	@Value("Editoral auto")
 	private String name;
+	@Value("Owner")
 	private String owner;
 
 	public Editorial(String name) {

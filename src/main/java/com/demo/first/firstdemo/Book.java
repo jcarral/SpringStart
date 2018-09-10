@@ -1,6 +1,9 @@
 package com.demo.first.firstdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Book {
+	@Autowired
 	private Editorial editorial;
 	private String name;
 	private Author author;

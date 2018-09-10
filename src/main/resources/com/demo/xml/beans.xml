@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="library" class="com.demo.first.firstdemo.Library">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.demo.first.firstdemo"></context:component-scan>
+	<bean id="library" class="com.demo.first.firstdemo.Library" scope="prototype">
 
 		<property name="books">
 			<list>
@@ -11,7 +14,7 @@
 				<bean class="com.demo.first.firstdemo.Book">
 					<property name="name" value="My second book"></property>
 					<property name="loan" ref="loan1"></property>
-					<property name="editorial" ref="editorial1"></property>
+					
 					<!-- <property name="author" ref="author1"></property> -->
 					<property name="author">
 						<bean class="com.demo.first.firstdemo.Author">
@@ -25,10 +28,10 @@
 		<property name="name" value="Biblio1"></property>
 	</bean>
 
-	<bean id="book1" class="com.demo.first.firstdemo.Book">
+	<bean id="book1" class="com.demo.first.firstdemo.Book" autowire="byName">
 		<property name="name" value="My book"></property>
 		<property name="loan" ref="loan1"></property>
-		<property name="editorial" ref="editorial1"></property>
+		<!-- <property name="editorial" ref="editorial1"></property> -->
 		<!-- <property name="author" ref="author1"></property> -->
 		<property name="author">
 			<bean class="com.demo.first.firstdemo.Author">
@@ -43,9 +46,10 @@
 	</bean>
 
 
-
+<!-- 
 	<bean id="editorial1" class="com.demo.first.firstdemo.Editorial">
 		<property name="name" value="NoBooks ed"></property>
 		<property name="owner" value="Will Smith"></property>
 	</bean>
+	-->
 </beans>
